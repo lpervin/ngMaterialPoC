@@ -1,0 +1,26 @@
+<mat-nav-list>
+        <a mat-list-item title="Show Logs"  [routerLink]='["logs"]' routerLinkActive="active-list-item">            
+              <mat-icon mat-list-icon>event_available</mat-icon>
+              <h4 mat-line *ngIf="isExpanded">View Logs</h4>
+            </a>
+        
+        <a mat-list-item title="Run Data loaders" routerLinkActive="active-list-item" [routerLink]='["loaders"]'>
+              <mat-icon mat-list-icon>settings_applications</mat-icon>
+              <h4 mat-line *ngIf="isExpanded">Run Data loaders</h4>
+          </a>        
+       
+         <!--
+         --> 
+           <a  mat-list-item  [routerLink]='["domain"]' routerLinkActive="active-list-item">
+              <mat-icon mat-list-icon>domain</mat-icon>
+              <h4 mat-line *ngIf="isExpanded">Management C</h4>
+            </a>          
+        
+        
+            <a  mat-list-item [routerLink]='["folders"]' routerLinkActive="active-list-item">
+              <mat-icon mat-list-icon>folder_shared</mat-icon>
+              <h4 mat-line *ngIf="isExpanded">Management X</h4>
+            </a>
+         
+      
+      </mat-nav-list>
