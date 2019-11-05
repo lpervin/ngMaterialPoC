@@ -7,19 +7,23 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
 
   {
-    path: "logs",
+    path: 'logs',
     component: LogviewerComponent,
-    pathMatch: "full"
+    pathMatch: 'full'
   },
   {
-    path: "loaders",
+    path: 'loaders',
     component: DataloaderComponent,
-    pathMatch: "full"
+    pathMatch: 'full'
   },
   {
-    path: "",
+    path: 'demo',
+    loadChildren: './demo/demo.module#DemoModule'
+  },
+  {
+    path: '**',
     redirectTo: '/logs',
-    pathMatch: "full"
+    pathMatch: 'full'
 }
 ];
 

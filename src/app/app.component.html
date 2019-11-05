@@ -7,10 +7,14 @@
               <mat-icon aria-label="Menu">home</mat-icon>
             </button>
          --> 
-         <div>Canon Logo here</div> <div class="spacer"></div>         <div>More toolbar controls here</div>
+         <button mat-mini-fab (click)="toggleSideNav()" color="warn" style="margin: 10px;">
+            <mat-icon *ngIf="drawerToggle" aria-label="Menu">toggle_on</mat-icon>
+            <mat-icon *ngIf="!drawerToggle" aria-label="Menu">toggle_off</mat-icon>
+          </button> 
+         <div> Canon Logo here</div> <div class="spacer"></div>         <div>More toolbar controls here</div>
     </mat-toolbar>
    
-  <mat-drawer #drawer mode="side" disableClose="true" opened="true" >
+  <mat-drawer #drawer mode="side" disableClose="true" opened="openSideNav" >
       <mat-toolbar color="primary">
           <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin:0px;">
               <mat-icon style="margin-right: 1px;"  class="menu-icon" aria-hidden="false" aria-label="Men0">menu</mat-icon>
@@ -20,6 +24,7 @@
       <app-sidebarmenu [isExpanded]="isExpanded"></app-sidebarmenu> 
     
   </mat-drawer>
+  
   <div class="page-content">
       <router-outlet></router-outlet>
     </div>
